@@ -158,20 +158,60 @@ fn main() {
     )
 }
 
-// Parses the [input.txt] file to the Vector of Strings
-fn parse_input(file: File) -> Vec<String> {
-    let reader = BufReader::new(file);
-    let mut res: Vec<String> = Vec::new();
-    for line in reader.lines() {
-        let current = line.unwrap();
-        res.push(current);
-    }
-
-    return res;
+#[derive(Debug)]
+struct Mapping {
+    dst_start: i64,
+    src_start: i64,
+    range_len: i64,
 }
 
-fn if_you_give_a_seed_a_fertilizer(input: Vec<String>) -> i32 {
-    let result: i32 = 0;
-    // TODO: implement
-    result
+struct Data {
+    seeds: Vec<i64>,
+    maps: Vec<Vec<Mapping>>,
+}
+
+// Parses the [input.txt] file to the Data structure
+fn parse_input(file: File) -> Data {
+    let reader = BufReader::new(file);
+    let lines: Vec<String> = reader.lines().map(|l| l.unwrap()).collect();
+
+    let seeds: Vec<i64> = lines[0].split_whitespace().skip(1).map(|s| s.parse().unwrap()).collect();
+
+    let mut maps: Vec<Vec<Mapping>> = Vec::new();
+    let mut i = 2;
+    while i < lines.len() {
+        let mut map: Vec<Mapping> = Vec::new();
+        i += 1;
+        while i < lines.len() && !lines[i].is_empty() {
+            let parts: Vec<i64> = lines[i].split_whitespace().map(|s| s.parse().unwrap()).collect();
+            map.push(Mapping {
+                dst_start: parts[0],
+                src_start: parts[1],
+                range_len: parts[2],
+            });
+            i += 1;
+        }
+        maps.push(map);
+        i += 1;
+    }
+
+    Data { seeds, maps }
+}
+
+fn if_you_give_a_seed_a_fertilizer(input: Data) -> i64 {
+    let mut locations: Vec<i64> = Vec::new();
+    for seed in input.seeds {
+        let mut current = seed;
+        for map in &input.maps {
+            for mapping in map {
+                if mapping.src_start <= current && current < mapping.src_start + mapping.range_len {
+                    current = mapping.dst_start + (current - mapping.src_start);
+                    break;
+                }
+            }
+        }
+        locations.push(current);
+    }
+
+    *locations.iter().min().unwrap()
 }
