@@ -47,17 +47,13 @@ pub fn run() {
  */
 fn two_sum_hash_map(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut garbage: HashMap<i32, i32> = HashMap::new();
-
-    for i in 0..nums.len() {
-        let diff: i32 = target - nums[i];
-        let val: Option<&i32> = garbage.get(&diff);
-
-        match val {
-            Some(v) => return vec![i.try_into().unwrap(), *v],
-            None => {
-                garbage.insert(nums[i], i.try_into().unwrap());
-            }
+    for (i, v) in nums.iter().enumerate() {
+        let diff = target - v;
+        if let Some(&m) = garbage.get(&diff) {
+            return vec![m as i32, i as i32];
         }
+
+        garbage.insert(*v, i.try_into().unwrap());
     }
 
     vec![]
