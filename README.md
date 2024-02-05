@@ -9,7 +9,7 @@ Here are the possible languages that I'll use: C/C++, Rust, Go, Zig, Python.
   <summary><b>LeetCode</b></summary>
 
 - [X] https://leetcode.com/problems/two-sum
-- [ ] https://leetcode.com/problems/valid-parentheses
+- [X] https://leetcode.com/problems/valid-parentheses
 - [ ] https://leetcode.com/problems/merge-two-sorted-lists
 - [ ] https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 - [ ] https://leetcode.com/problems/valid-palindrome
