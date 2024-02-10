@@ -12,7 +12,7 @@ Here are the possible languages that I'll use: C/C++, Rust, Go, Zig, Python.
 - [X] https://leetcode.com/problems/valid-parentheses
 - [X] https://leetcode.com/problems/merge-two-sorted-lists
 - [X] https://leetcode.com/problems/best-time-to-buy-and-sell-stock
-- [ ] https://leetcode.com/problems/valid-palindrome
+- [X] https://leetcode.com/problems/valid-palindrome
 - [ ] https://leetcode.com/problems/invert-binary-tree
 - [ ] https://leetcode.com/problems/valid-anagram
 - [ ] https://leetcode.com/problems/binary-search
