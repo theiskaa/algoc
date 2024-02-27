@@ -16,6 +16,7 @@ fn main() {
         "merge_two_sorted_lists" => merge_two_sorted_lists::run(),
         "max_profit" | "best_time_to_buy_and_sell_stock" => best_time_to_buy_and_sell_stock::run(),
         "valid_palindrome" => valid_palindrome::run(),
+        "valid_anagram" => valid_anagram::run(),
         name => eprintln!("Error: problem doesn't exists with name {}", name),
     }
 }

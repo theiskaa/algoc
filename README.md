@@ -14,7 +14,7 @@ Here are the possible languages that I'll use: C/C++, Rust, Go, Zig, Python.
 - [X] https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 - [X] https://leetcode.com/problems/valid-palindrome
 - [ ] https://leetcode.com/problems/invert-binary-tree
-- [ ] https://leetcode.com/problems/valid-anagram
+- [X] https://leetcode.com/problems/valid-anagram
 - [ ] https://leetcode.com/problems/binary-search
 - [ ] https://leetcode.com/problems/flood-fill
 - [ ] https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
