@@ -17,6 +17,7 @@ fn main() {
         "max_profit" | "best_time_to_buy_and_sell_stock" => best_time_to_buy_and_sell_stock::run(),
         "valid_palindrome" => valid_palindrome::run(),
         "valid_anagram" => valid_anagram::run(),
+        "binary_search" => binary_search::run(),
         name => eprintln!("Error: problem doesn't exists with name {}", name),
     }
 }
